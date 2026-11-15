@@ -4,9 +4,11 @@
 
 > **DSH 插件装好后还差桌面皮套。** 本插件包不包含 Live2D 模型、动作、语音或桌面启动程序；请先试 [国内加速下载约 253 MB 的完整 Windows 包](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip)，打不开时换 [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。完整解压后直接运行 `启动大肥鱼.bat`。只有 DSH 提示插件未加载时，才需要再运行 `INSTALL-PLUGIN.bat` 并重启。
 
+> 在 DSH 插件页打开 `@local/dsh-fishpet-emotion` 的介绍页，底部也有一张“下载 FishPet 完整版”卡片，点击国内加速按钮就会直接下载 ZIP。
+
 > 加速线路由第三方公共节点转发，速度会随网络变化。下载后可核对 `FishPet-2026.11.15-windows-x64.zip` 的 SHA-256：`D4CAA179065B612F26005D95335CAAA73FAD92C63FCC5C7DB36DE19B86269DBA`。
 
-> 已经安装 `0.9.11` 的话，请在 DSH 插件页先卸载旧版，再从“添加插件 → 安装第三方插件”安装 `0.9.12`。
+> 已经安装旧版的话，请在 DSH 插件页先卸载，再从“添加插件 → 安装第三方插件”安装 `0.9.13`。
 
 - **零外部依赖**：不 import Python、AstrBot 或任何 HTTP SDK；按需截图由运行中的 FishPet Electron 进程完成，没有额外 npm 运行依赖。
 - **本机桥只服务桌宠、不会盲目建会话**：Host 服务名是 `fishpetEmotion`；桥只绑 `127.0.0.1`，chat/work 两条绑定严格分离；陪伴聊天固定在自己的工作区，聊天选择器只列该工作区，工作选择器不会混入陪伴会话；只有 chat 通道第一次发送且尚未绑定时才创建陪伴会话，不批审批。
