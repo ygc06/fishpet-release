@@ -6,7 +6,7 @@
 
 平时，她会自己看回来、歪头、走神，偶尔露出一点小脾气。真聊起来时，她的表情、语气和下一句话会连在一起，不会每轮都像刚认识你。
 
-> **从 DSH 插件市场安装？** 市场包只安装情绪、陪伴和看板插件。人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[下载完整桌宠包](https://github.com/ygc06/fishpet-release/releases/latest)。
+> **从 DSH 右上角“添加插件”安装？** 插件包只安装情绪、陪伴和看板。人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。
 
 > **素材来源说明：**“大肥鱼”Live2D 模型、贴图和原角色形象不是本项目作者原创，权利归原视频作者及角色权利人所有。详见 [素材来源与授权说明](素材来源与授权说明.md)。
 
@@ -55,7 +55,15 @@
 
 第一次聊天时，请把聊天框模型选择器里的思考强度调到 `low`。情绪判读的小模型也保持低思考强度；默认已经配好，不要手动调高。
 
-[去 Releases 下载](../../releases/latest)
+[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](../../releases/latest)
+
+加速线路是第三方 GitHub 转发，速度会随网络变化。两个入口下载的是同一个约 253 MB 的 ZIP；下载后可核对 SHA-256：
+
+```text
+D4CAA179065B612F26005D95335CAAA73FAD92C63FCC5C7DB36DE19B86269DBA
+```
+
+已安装旧版插件的用户，请先在 DSH 插件页卸载旧版，再安装新版插件包。
 
 需要 **Windows 10/11 x64**。包内已经带好桌宠运行时，不需要另外安装 Python、Node.js 或 FFmpeg。更细的安装说明和常见问题在下载包内。
 
