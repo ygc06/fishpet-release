@@ -2,7 +2,11 @@
 
 桌宠情绪系统的 DSH 原生插件：把「一次对话 → 一次结构化情绪观察 → 程序状态计算 → 可审计的第一层快照 + 第二层关系/记忆/表达状态」这条链路放进 DSH 进程内。小模型只记可验证的变化；陪伴大模型直接读原话、最近对话和程序状态，自己理解并组织回答。情绪看板入口留在 FishPet 自己的聊天框标题栏，不占用 DSH 对话顶部栏。
 
-> **市场安装后还差桌面皮套。** 本插件包不包含 Live2D 模型、动作、语音或桌面启动程序；请从 [Releases 下载约 253 MB 的完整 Windows 包](https://github.com/ygc06/fishpet-release/releases/latest)，完整解压后直接运行 `启动大肥鱼.bat`。只有 DSH 提示插件未加载时，才需要再运行 `INSTALL-PLUGIN.bat` 并重启。
+> **DSH 插件装好后还差桌面皮套。** 本插件包不包含 Live2D 模型、动作、语音或桌面启动程序；请先试 [国内加速下载约 253 MB 的完整 Windows 包](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip)，打不开时换 [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。完整解压后直接运行 `启动大肥鱼.bat`。只有 DSH 提示插件未加载时，才需要再运行 `INSTALL-PLUGIN.bat` 并重启。
+
+> 加速线路由第三方公共节点转发，速度会随网络变化。下载后可核对 `FishPet-2026.11.15-windows-x64.zip` 的 SHA-256：`D4CAA179065B612F26005D95335CAAA73FAD92C63FCC5C7DB36DE19B86269DBA`。
+
+> 已经安装 `0.9.11` 的话，请在 DSH 插件页先卸载旧版，再从“添加插件 → 安装第三方插件”安装 `0.9.12`。
 
 - **零外部依赖**：不 import Python、AstrBot 或任何 HTTP SDK；按需截图由运行中的 FishPet Electron 进程完成，没有额外 npm 运行依赖。
 - **本机桥只服务桌宠、不会盲目建会话**：Host 服务名是 `fishpetEmotion`；桥只绑 `127.0.0.1`，chat/work 两条绑定严格分离；陪伴聊天固定在自己的工作区，聊天选择器只列该工作区，工作选择器不会混入陪伴会话；只有 chat 通道第一次发送且尚未绑定时才创建陪伴会话，不批审批。
