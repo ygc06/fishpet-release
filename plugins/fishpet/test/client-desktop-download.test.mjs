@@ -25,9 +25,12 @@ test("desktop setup shows the release checksum and does not auto-download", () =
   assert.match(source, /onClick:\s*close/);
 });
 
-test("the plugin keeps its single overlay mount and uses the mirror in the dashboard footer", () => {
+test("the plugin registers its detail-page download card and uses the mirror in the dashboard footer", () => {
   const slots = [...source.matchAll(/ctx\.slots\.inject\(\s*["']([^"']+)["']/g)]
     .map((match) => match[1]);
-  assert.deepEqual(slots, ["shell.overlay"]);
+  assert.deepEqual(slots, ["plugins.detail.section", "shell.overlay"]);
+  assert.match(source, /function PluginDownloadSection\(props\)/);
+  assert.match(source, /subject\.kind !== "bundle" \|\| pkg\.name !== "@local\/dsh-fishpet-emotion"/);
+  assert.match(source, /"⚡ 下载完整版（国内加速）"/);
   assert.match(source, /className:\s*"dfe-desktop-download",[\s\S]{0,160}href:\s*DESKTOP_ZIP_MIRROR_URL/);
 });
