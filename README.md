@@ -8,6 +8,8 @@
 
 > **从 DSH 右上角“添加插件”安装？** 先粘贴[插件包直链](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)；人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。
 
+> 安装后打开插件的介绍页，底部也会显示“下载 FishPet 完整版”卡片；点击国内加速按钮即可直接下载 ZIP。
+
 > **素材来源说明：**“大肥鱼”Live2D 模型、贴图和原角色形象不是本项目作者原创，权利归原视频作者及角色权利人所有。详见 [素材来源与授权说明](素材来源与授权说明.md)。
 
 ## 她有自己的情绪，也会记住刚才那句话
