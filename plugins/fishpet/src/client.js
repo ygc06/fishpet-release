@@ -9,7 +9,8 @@ window.__ModuleLoader__.load({
     var ENDPOINT = "/api/fishpet-emotion.dashboard";
     var POLL_MS = 5000;
     var DESKTOP_ZIP_URL = "https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip";
-    var RELEASE_PAGE_URL = "https://github.com/ygc06/fishpet-release/releases/latest";
+    var DESKTOP_ZIP_MIRROR_URL = "https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip";
+    var DESKTOP_ZIP_SHA256 = "D4CAA179065B612F26005D95335CAAA73FAD92C63FCC5C7DB36DE19B86269DBA";
     var SETUP_DISMISSED_KEY = "dsh-fishpet-emotion:desktop-guide:v1";
     var listeners = new Set();
     var openState = false;
@@ -87,29 +88,43 @@ window.__ModuleLoader__.load({
           h("div", { className: "dfe-setup-kicker" }, "DSH 插件已经安装好"),
           h("h2", { id: "dfe-setup-title" }, "还差桌面皮套这一步"),
           h("p", { className: "dfe-setup-copy" },
-            "市场安装的是情绪、陪伴和看板插件。她的人物模型、动作、语音和启动程序在完整 Windows 包里，需要再下载一次。",
+            "DSH 里装好的是情绪、陪伴和看板插件。她的人物模型、动作、语音和启动程序在完整 Windows 包里，需要再下载一次。国内网络优先用加速线路，打不开时再换 GitHub 原站。",
           ),
           h("ol", { className: "dfe-setup-steps" },
-            h("li", null, "下载并完整解压约 253 MB 的桌宠包"),
+            h("li", null, "先点国内加速下载；没有反应就换 GitHub 原站"),
+            h("li", null, "下载完成后完整解压约 253 MB 的桌宠包"),
             h("li", null, "打开桌宠目录，双击 启动大肥鱼.bat"),
-            h("li", null, "只有 DSH 提示插件未加载时，才运行 INSTALL-PLUGIN.bat 并重启"),
           ),
           h("div", { className: "dfe-setup-actions" },
             h("a", {
               className: "dfe-setup-primary",
+              href: DESKTOP_ZIP_MIRROR_URL,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              onClick: close,
+              "aria-label": "从国内加速线路下载完整桌宠包",
+            }, "⚡ 国内加速下载"),
+            h("a", {
+              className: "dfe-setup-direct",
               href: DESKTOP_ZIP_URL,
               target: "_blank",
               rel: "noopener noreferrer",
               onClick: close,
-            }, "下载完整桌宠包"),
+              "aria-label": "从 GitHub 原站下载完整桌宠包",
+            }, "GitHub 原站"),
             h("button", {
               type: "button",
-              className: "dfe-setup-secondary",
+              className: "dfe-setup-later",
               onClick: close,
-            }, "取消，稍后下载"),
+            }, "稍后下载"),
           ),
           h("p", { className: "dfe-setup-note" },
-            "取消后，可以从情绪看板底部或插件介绍页重新打开下载页。",
+            "加速线路是第三方 GitHub 转发，速度会随网络变化。两个下载入口打开的是同一个 253 MB 文件。",
+          ),
+          h("div", { className: "dfe-setup-checksum" },
+            h("span", null, "SHA-256"),
+            h("code", null, DESKTOP_ZIP_SHA256),
+            h("small", null, "下载后可核对，或查看同目录下的 .sha256 文件。"),
           ),
         ),
       );
@@ -1211,10 +1226,11 @@ window.__ModuleLoader__.load({
             h("span", null, "只读 · 每 5 秒刷新"),
             h("a", {
               className: "dfe-desktop-download",
-              href: RELEASE_PAGE_URL,
+              href: DESKTOP_ZIP_MIRROR_URL,
               target: "_blank",
               rel: "noopener noreferrer",
-            }, "下载桌面端"),
+              title: "国内加速下载完整桌宠包",
+            }, "⚡ 下载桌面端"),
             h("span", null, current.generatedAt ? "最近快照 " + time(current.generatedAt) : "等待更新"),
           ),
         ),
@@ -1234,11 +1250,11 @@ window.__ModuleLoader__.load({
       ".dfe-setup-card h2{margin:6px 0 10px;color:#5b3f57;font-size:24px;line-height:1.2;letter-spacing:.02em}",
       ".dfe-setup-copy{margin:0;color:#765d70;font-size:13px;line-height:1.78}",
       ".dfe-setup-steps{display:grid;gap:8px;margin:18px 0;padding:15px 16px 15px 39px;border:1px solid rgba(231,169,193,.3);border-radius:17px;background:rgba(255,255,255,.62);color:#654e61;font-size:12.5px;line-height:1.6}.dfe-setup-steps li::marker{color:#df7fa8;font-weight:800}",
-      ".dfe-setup-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.dfe-setup-primary{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 20px;border-radius:999px;background:linear-gradient(135deg,#f58db6,#de82ba 48%,#9e95df);box-shadow:0 9px 22px rgba(205,103,152,.28),inset 0 1px 0 rgba(255,255,255,.45);color:#fff;font-size:13px;font-weight:800;text-decoration:none}.dfe-setup-primary:hover{filter:brightness(1.04);transform:translateY(-1px)}.dfe-setup-secondary{min-height:42px;padding:0 17px;border:1px solid rgba(210,149,175,.3);border-radius:999px;background:#fffafc;color:#8d667b;font:inherit;font-size:12.5px;cursor:pointer}.dfe-setup-secondary:hover{background:#fff;color:#a34f77}",
-      ".dfe-setup-note{margin:13px 0 0;color:#9b8391;font-size:11px;line-height:1.6}.dfe-desktop-download{color:#a55c7c;text-decoration:none;font-weight:700}.dfe-desktop-download:hover{text-decoration:underline}",
+      ".dfe-setup-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.dfe-setup-primary,.dfe-setup-direct{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;font-size:12.5px;font-weight:800;text-decoration:none;transition:transform .15s ease,filter .15s ease,background .15s ease,border-color .15s ease}.dfe-setup-primary{padding:0 18px;border:1px solid rgba(255,255,255,.38);background:linear-gradient(135deg,#f58db6,#de82ba 48%,#9e95df);box-shadow:0 9px 22px rgba(205,103,152,.28),inset 0 1px 0 rgba(255,255,255,.45);color:#fff}.dfe-setup-primary:hover{filter:brightness(1.04);transform:translateY(-1px)}.dfe-setup-direct{padding:0 15px;border:1px solid rgba(210,149,175,.3);background:#fffafc;color:#8d667b}.dfe-setup-direct:hover{border-color:rgba(205,120,156,.46);background:#fff;color:#a34f77;transform:translateY(-1px)}.dfe-setup-later{min-height:38px;padding:0 8px;border:0;background:transparent;color:#9b7f8e;font:inherit;font-size:11.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}.dfe-setup-later:hover{color:#a34f77}",
+      ".dfe-setup-note{margin:12px 0 0;color:#9b8391;font-size:11px;line-height:1.6}.dfe-setup-checksum{display:grid;gap:4px;margin-top:12px;padding:10px 12px;border:1px solid rgba(226,164,187,.24);border-radius:13px;background:rgba(255,255,255,.55);color:#876d7d;font-size:10px;line-height:1.45}.dfe-setup-checksum>span{font-weight:800;letter-spacing:.06em}.dfe-setup-checksum code{overflow-wrap:anywhere;color:#76566a;font:10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;user-select:all}.dfe-setup-checksum small{color:#a08794}.dfe-desktop-download{color:#a55c7c;text-decoration:none;font-weight:700}.dfe-desktop-download:hover{text-decoration:underline}",
       "@keyframes dfe-setup-fade{from{opacity:0}to{opacity:1}}@keyframes dfe-setup-rise{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}",
-      "@media (prefers-color-scheme:dark){.dfe-setup-card{border-color:rgba(255,157,192,.24);background:radial-gradient(circle at 100% 0,rgba(255,143,184,.16),transparent 34%),linear-gradient(150deg,#352c3b,#2b293a);box-shadow:0 28px 90px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);color:#f1dce6}.dfe-setup-card h2{color:#fff1f7}.dfe-setup-copy,.dfe-setup-steps{color:#d7bcc9}.dfe-setup-steps{background:rgba(255,255,255,.04);border-color:rgba(255,157,192,.14)}.dfe-setup-secondary{background:#2d2734;color:#d6b8c7;border-color:rgba(255,157,192,.2)}.dfe-setup-note{color:#a98f9d}.dfe-desktop-download{color:#ffa9c8}}",
-      "@media (max-width:560px){.dfe-setup-backdrop{padding:5vh 12px 18px}.dfe-setup-card{padding:24px 19px 20px;border-radius:22px}.dfe-setup-card h2{font-size:20px}.dfe-setup-actions{display:grid}.dfe-setup-primary,.dfe-setup-secondary{width:100%}}",
+      "@media (prefers-color-scheme:dark){.dfe-setup-card{border-color:rgba(255,157,192,.24);background:radial-gradient(circle at 100% 0,rgba(255,143,184,.16),transparent 34%),linear-gradient(150deg,#352c3b,#2b293a);box-shadow:0 28px 90px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);color:#f1dce6}.dfe-setup-card h2{color:#fff1f7}.dfe-setup-copy,.dfe-setup-steps{color:#d7bcc9}.dfe-setup-steps{background:rgba(255,255,255,.04);border-color:rgba(255,157,192,.14)}.dfe-setup-direct{background:#2d2734;color:#d6b8c7;border-color:rgba(255,157,192,.2)}.dfe-setup-note{color:#a98f9d}.dfe-setup-checksum{background:rgba(255,255,255,.04);border-color:rgba(255,157,192,.14);color:#caaabb}.dfe-setup-checksum code{color:#f0d4e1}.dfe-setup-checksum small{color:#a98f9d}.dfe-desktop-download{color:#ffa9c8}}",
+      "@media (max-width:560px){.dfe-setup-backdrop{padding:5vh 12px 18px}.dfe-setup-card{padding:24px 19px 20px;border-radius:22px}.dfe-setup-card h2{font-size:20px}.dfe-setup-actions{display:grid}.dfe-setup-primary,.dfe-setup-direct{width:100%}.dfe-setup-later{width:100%;min-height:34px}}",
       ".dfe-overlay{--dfe-bg:#f6f8fb;--dfe-card:#fff;--dfe-card2:#f8fafc;--dfe-ink:#18212d;--dfe-ink2:#5d6979;--dfe-ink3:#8d98a7;--dfe-line:#e5eaf1;--dfe-accent:#2e947d;--dfe-accent-soft:#e5f4ef;--dfe-blue:#477bdb;--dfe-amber:#bb8121;--dfe-red:#c7585e;--dfe-shadow:0 18px 56px rgba(24,33,45,.2);position:fixed;inset:0;z-index:1000;display:flex;justify-content:flex-end;pointer-events:none;color:var(--dfe-ink);font-family:var(--dsh-font-family,ui-sans-serif,system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif);letter-spacing:0}",
       ".dfe-backdrop{position:absolute;inset:0;border:0;background:rgba(20,29,41,.18);backdrop-filter:blur(1px);pointer-events:auto;cursor:default}",
       ".dfe-drawer{position:relative;z-index:1;display:flex;flex-direction:column;width:min(480px,calc(100vw - 52px));height:100%;background:var(--dfe-bg);box-shadow:var(--dfe-shadow);pointer-events:auto;border-left:1px solid var(--dfe-line);overflow:hidden;transition:width .2s ease}",
