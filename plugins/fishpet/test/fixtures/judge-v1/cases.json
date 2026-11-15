@@ -1,0 +1,136 @@
+[
+  {
+    "name": "whitelist-and-clamp",
+    "utterance": "今天见到你我很开心",
+    "input": {
+      "delta": {
+        "valence": 99,
+        "arousal": -99,
+        "clingy": 3.4,
+        "dominance": 0,
+        "energy": 20
+      },
+      "feelings": [
+        {
+          "w": "开心",
+          "of": ""
+        }
+      ],
+      "emo": "开心",
+      "mood": "今天见到你，心里亮了一下",
+      "state": "我原本只是安静待着，听见这句话以后整个人都轻快起来了。",
+      "act": "靠近",
+      "event": {
+        "type": "亲近",
+        "quote": "见到你",
+        "what": "主人回来看她",
+        "label": "见面",
+        "who": "他",
+        "weight": 6,
+        "unsolved": false
+      },
+      "carry": "变了",
+      "face": "开心",
+      "live2d": [
+        {
+          "face": "开心",
+          "do": "笑",
+          "size": "中",
+          "pace": "快",
+          "at": 1.7
+        }
+      ]
+    },
+    "expect": {
+      "ok": true,
+      "delta": {
+        "valence": 35,
+        "arousal": -30,
+        "clingy": 3,
+        "dominance": 0
+      },
+      "degradedIncludes": [
+        "delta.valence.clamped",
+        "delta.arousal.clamped",
+        "delta.energy.ignored"
+      ]
+    }
+  },
+  {
+    "name": "unknown-event-and-digit",
+    "utterance": "你刚才那句话让我有点难受",
+    "input": {
+      "delta": {
+        "valence": -8
+      },
+      "mood": "有点被刺到",
+      "state": "这句话让我心里顿了一下，但我还愿意把感觉说清楚。",
+      "act": "认一句",
+      "event": {
+        "type": "奇怪事件",
+        "quote": "那句话",
+        "what": "他说了 2 遍",
+        "label": "重复",
+        "weight": 8
+      }
+    },
+    "expect": {
+      "ok": true,
+      "eventType": "普通",
+      "eventQuote": "",
+      "weight": 0,
+      "act": "说难受",
+      "degradedIncludes": [
+        "event.type",
+        "event.quote.dropped",
+        "event.what.digit",
+        "event.weight.digit",
+        "act.needs-quote"
+      ]
+    }
+  },
+  {
+    "name": "no-utterance-drops-quote",
+    "utterance": "",
+    "input": {
+      "delta": {
+        "clingy": 4
+      },
+      "mood": "想靠近一点",
+      "state": "我想往前一点，又怕自己显得太着急，只好先停在这里。",
+      "act": "认一句",
+      "event": {
+        "type": "修复",
+        "quote": "虚构摘句",
+        "what": "关系缓和",
+        "weight": 3
+      }
+    },
+    "expect": {
+      "ok": true,
+      "eventQuote": "",
+      "act": "说难受",
+      "degradedIncludes": [
+        "event.quote.no-utterance"
+      ]
+    }
+  },
+  {
+    "name": "all-fields-bad",
+    "utterance": "……",
+    "input": {
+      "delta": {
+        "energy": 5
+      },
+      "mood": "",
+      "state": "",
+      "event": {
+        "type": "普通"
+      }
+    },
+    "expect": {
+      "ok": false,
+      "code": "judge_all_fields_bad"
+    }
+  }
+]

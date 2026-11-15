@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "role": "user",
+      "text": "synthetic excluded message"
+    },
+    {
+      "role": "assistant",
+      "text": "synthetic excluded reply"
+    }
+  ]
+}

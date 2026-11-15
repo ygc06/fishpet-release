@@ -1,0 +1,26 @@
+{
+  "scopes": {
+    "fixture-primary": {
+      "items": [
+        {
+          "text": "synthetic episode one"
+        },
+        {
+          "text": "synthetic episode two"
+        }
+      ]
+    },
+    "": {
+      "items": [
+        {
+          "text": "synthetic unscoped episode"
+        }
+      ]
+    }
+  },
+  "memory": {
+    "fixture-memory-one": {
+      "text": "synthetic memory"
+    }
+  }
+}

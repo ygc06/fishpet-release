@@ -1,0 +1,10 @@
+{
+  "users": {
+    "fixture-user-alpha": {
+      "name": "synthetic-alpha"
+    },
+    "fixture-user-beta": {
+      "name": "synthetic-beta"
+    }
+  }
+}
