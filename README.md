@@ -6,7 +6,7 @@
 
 平时，她会自己看回来、歪头、走神，偶尔露出一点小脾气。真聊起来时，她的表情、语气和下一句话会连在一起，不会每轮都像刚认识你。
 
-> **从 DSH 右上角“添加插件”安装？** 插件包只安装情绪、陪伴和看板。人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。
+> **从 DSH 右上角“添加插件”安装？** 先粘贴[插件包直链](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)；人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。
 
 > **素材来源说明：**“大肥鱼”Live2D 模型、贴图和原角色形象不是本项目作者原创，权利归原视频作者及角色权利人所有。详见 [素材来源与授权说明](素材来源与授权说明.md)。
 
@@ -49,9 +49,9 @@
 
 ## 三步开箱
 
-1. **下载并完整解压** `FishPet-2026.11.15-windows-x64.zip`。
-2. **完全退出 DSH Desktop**，双击根目录的 `INSTALL-PLUGIN.bat`，再重新启动 DSH。
-3. 双击桌宠目录里的 `启动大肥鱼.bat`，她就会出现在桌面边上。
+1. 在 DSH 右上角“添加插件 → 安装第三方插件”安装约 294 KB 的 [fishpet-emotion.tgz](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)。
+2. **下载并完整解压** `FishPet-2026.11.15-windows-x64.zip`，再双击桌宠目录里的 `启动大肥鱼.bat`。
+3. 只有 DSH 插件页没有 `@local/dsh-fishpet-emotion` 时，才需要完全退出 DSH、运行包内 `INSTALL-PLUGIN.bat` 并重启。
 
 第一次聊天时，请把聊天框模型选择器里的思考强度调到 `low`。情绪判读的小模型也保持低思考强度；默认已经配好，不要手动调高。
 
