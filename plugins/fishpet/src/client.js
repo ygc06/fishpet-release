@@ -130,6 +130,47 @@ window.__ModuleLoader__.load({
       );
     }
 
+    function PluginDownloadSection(props) {
+      var subject = obj(props && props.subject);
+      var pkg = obj(subject.pkg);
+      if (subject.kind !== "bundle" || pkg.name !== "@local/dsh-fishpet-emotion") return null;
+      return h(
+        "section",
+        { className: "dfe-plugin-download", "aria-labelledby": "dfe-plugin-download-title" },
+        h("div", { className: "dfe-plugin-download-head" },
+          h("div", { className: "dfe-plugin-download-mark", "aria-hidden": "true" }, "🐟"),
+          h("div", { className: "dfe-plugin-download-copy" },
+            h("div", { className: "dfe-plugin-download-kicker" }, "完整桌面皮套"),
+            h("h3", { id: "dfe-plugin-download-title" }, "下载 FishPet 完整版"),
+            h("p", null,
+              "这个插件负责情绪、聊天和看板。人物模型、动作、语音和桌面启动程序在完整 Windows 包里，点击下面的按钮即可下载。",
+            ),
+          ),
+        ),
+        h("div", { className: "dfe-plugin-download-actions" },
+          h("a", {
+            className: "dfe-plugin-download-primary",
+            href: DESKTOP_ZIP_MIRROR_URL,
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }, "⚡ 下载完整版（国内加速）"),
+          h("a", {
+            className: "dfe-plugin-download-secondary",
+            href: DESKTOP_ZIP_URL,
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }, "GitHub 原站"),
+        ),
+        h("p", { className: "dfe-plugin-download-note" },
+          "文件约 253 MB，下载后完整解压并双击 启动大肥鱼.bat。加速线路打不开时换 GitHub 原站。",
+        ),
+        h("details", { className: "dfe-plugin-download-verify" },
+          h("summary", null, "查看文件信息与 SHA-256"),
+          h("code", null, DESKTOP_ZIP_SHA256),
+        ),
+      );
+    }
+
     function cx() {
       return Array.prototype.slice.call(arguments).filter(Boolean).join(" ");
     }
@@ -1252,6 +1293,14 @@ window.__ModuleLoader__.load({
       ".dfe-setup-steps{display:grid;gap:8px;margin:18px 0;padding:15px 16px 15px 39px;border:1px solid rgba(231,169,193,.3);border-radius:17px;background:rgba(255,255,255,.62);color:#654e61;font-size:12.5px;line-height:1.6}.dfe-setup-steps li::marker{color:#df7fa8;font-weight:800}",
       ".dfe-setup-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.dfe-setup-primary,.dfe-setup-direct{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;font-size:12.5px;font-weight:800;text-decoration:none;transition:transform .15s ease,filter .15s ease,background .15s ease,border-color .15s ease}.dfe-setup-primary{padding:0 18px;border:1px solid rgba(255,255,255,.38);background:linear-gradient(135deg,#f58db6,#de82ba 48%,#9e95df);box-shadow:0 9px 22px rgba(205,103,152,.28),inset 0 1px 0 rgba(255,255,255,.45);color:#fff}.dfe-setup-primary:hover{filter:brightness(1.04);transform:translateY(-1px)}.dfe-setup-direct{padding:0 15px;border:1px solid rgba(210,149,175,.3);background:#fffafc;color:#8d667b}.dfe-setup-direct:hover{border-color:rgba(205,120,156,.46);background:#fff;color:#a34f77;transform:translateY(-1px)}.dfe-setup-later{min-height:38px;padding:0 8px;border:0;background:transparent;color:#9b7f8e;font:inherit;font-size:11.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}.dfe-setup-later:hover{color:#a34f77}",
       ".dfe-setup-note{margin:12px 0 0;color:#9b8391;font-size:11px;line-height:1.6}.dfe-setup-checksum{display:grid;gap:4px;margin-top:12px;padding:10px 12px;border:1px solid rgba(226,164,187,.24);border-radius:13px;background:rgba(255,255,255,.55);color:#876d7d;font-size:10px;line-height:1.45}.dfe-setup-checksum>span{font-weight:800;letter-spacing:.06em}.dfe-setup-checksum code{overflow-wrap:anywhere;color:#76566a;font:10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;user-select:all}.dfe-setup-checksum small{color:#a08794}.dfe-desktop-download{color:#a55c7c;text-decoration:none;font-weight:700}.dfe-desktop-download:hover{text-decoration:underline}",
+      ".dfe-plugin-download{display:grid;gap:14px;margin:16px 0 2px;padding:18px;border:1px solid rgba(224,150,178,.3);border-radius:18px;background:radial-gradient(circle at 100% 0,rgba(255,181,207,.22),transparent 36%),radial-gradient(circle at 0 100%,rgba(157,174,234,.14),transparent 35%),linear-gradient(145deg,#fffdfd,#fff5f9 60%,#f8f5ff);box-shadow:0 10px 28px rgba(151,91,121,.08),inset 0 1px 0 #fff;color:#583f55}",
+      ".dfe-plugin-download-head{display:flex;align-items:flex-start;gap:13px}.dfe-plugin-download-mark{display:grid;place-items:center;flex:none;width:48px;height:48px;border:2px solid #fff;border-radius:50%;background:linear-gradient(145deg,#fff,#ffdbe8);box-shadow:0 0 0 5px rgba(255,215,230,.55),0 8px 18px rgba(177,100,136,.13);font-size:24px;transform:rotate(-4deg)}",
+      ".dfe-plugin-download-copy{min-width:0}.dfe-plugin-download-kicker{color:#b26387;font-size:10px;font-weight:800;letter-spacing:.12em}.dfe-plugin-download h3{margin:4px 0 6px;color:#573d54;font-size:18px;line-height:1.25}.dfe-plugin-download p{margin:0;color:#7d6575;font-size:12px;line-height:1.7}",
+      ".dfe-plugin-download-actions{display:flex;flex-wrap:wrap;gap:9px}.dfe-plugin-download-primary,.dfe-plugin-download-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 17px;border-radius:999px;font-size:12px;font-weight:800;text-decoration:none;transition:transform .15s ease,filter .15s ease,background .15s ease}.dfe-plugin-download-primary{border:1px solid rgba(255,255,255,.45);background:linear-gradient(135deg,#f48db5,#df80b8 50%,#9e95df);box-shadow:0 8px 20px rgba(205,103,152,.24),inset 0 1px 0 rgba(255,255,255,.42);color:#fff}.dfe-plugin-download-primary:hover{filter:brightness(1.04);transform:translateY(-1px)}.dfe-plugin-download-secondary{border:1px solid rgba(211,147,174,.3);background:#fffafd;color:#8e637a}.dfe-plugin-download-secondary:hover{border-color:rgba(205,120,156,.46);background:#fff;color:#a34f77;transform:translateY(-1px)}",
+      ".dfe-plugin-download-note{padding-top:2px;color:#967b8a!important;font-size:10.5px!important}.dfe-plugin-download-verify{border-top:1px dashed rgba(211,147,174,.26);padding-top:10px;color:#967b8a;font-size:10px}.dfe-plugin-download-verify summary{cursor:pointer;font-weight:700}.dfe-plugin-download-verify code{display:block;margin-top:7px;padding:8px;border-radius:8px;background:rgba(92,63,81,.06);color:#765368;font:9.5px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;word-break:break-all;user-select:all}",
+      "@media (prefers-color-scheme:dark){.dfe-plugin-download{border-color:rgba(255,157,192,.2);background:radial-gradient(circle at 100% 0,rgba(255,143,184,.12),transparent 36%),linear-gradient(145deg,#302a34,#292633);box-shadow:0 12px 32px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04);color:#edd8e2}.dfe-plugin-download h3{color:#fff0f6}.dfe-plugin-download p{color:#d0b5c2}.dfe-plugin-download-secondary{border-color:rgba(255,157,192,.2);background:#2d2734;color:#ddbfcd}.dfe-plugin-download-verify code{background:rgba(255,255,255,.06);color:#f0d4e1}}",
+      ":is(html[data-theme='dark'],body[data-theme='dark'],html.dark,body[data-ds-dark-theme]) .dfe-plugin-download{border-color:rgba(255,157,192,.2);background:radial-gradient(circle at 100% 0,rgba(255,143,184,.12),transparent 36%),linear-gradient(145deg,#302a34,#292633);box-shadow:0 12px 32px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04);color:#edd8e2}:is(html[data-theme='dark'],body[data-theme='dark'],html.dark,body[data-ds-dark-theme]) .dfe-plugin-download h3{color:#fff0f6}:is(html[data-theme='dark'],body[data-theme='dark'],html.dark,body[data-ds-dark-theme]) .dfe-plugin-download p{color:#d0b5c2}:is(html[data-theme='dark'],body[data-theme='dark'],html.dark,body[data-ds-dark-theme]) .dfe-plugin-download-secondary{border-color:rgba(255,157,192,.2);background:#2d2734;color:#ddbfcd}:is(html[data-theme='dark'],body[data-theme='dark'],html.dark,body[data-ds-dark-theme]) .dfe-plugin-download-verify code{background:rgba(255,255,255,.06);color:#f0d4e1}",
+      "@media (max-width:560px){.dfe-plugin-download{padding:15px;border-radius:15px}.dfe-plugin-download-head{align-items:center}.dfe-plugin-download-mark{width:42px;height:42px;font-size:21px}.dfe-plugin-download h3{font-size:16px}.dfe-plugin-download-primary,.dfe-plugin-download-secondary{width:100%}}",
       "@keyframes dfe-setup-fade{from{opacity:0}to{opacity:1}}@keyframes dfe-setup-rise{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}",
       "@media (prefers-color-scheme:dark){.dfe-setup-card{border-color:rgba(255,157,192,.24);background:radial-gradient(circle at 100% 0,rgba(255,143,184,.16),transparent 34%),linear-gradient(150deg,#352c3b,#2b293a);box-shadow:0 28px 90px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);color:#f1dce6}.dfe-setup-card h2{color:#fff1f7}.dfe-setup-copy,.dfe-setup-steps{color:#d7bcc9}.dfe-setup-steps{background:rgba(255,255,255,.04);border-color:rgba(255,157,192,.14)}.dfe-setup-direct{background:#2d2734;color:#d6b8c7;border-color:rgba(255,157,192,.2)}.dfe-setup-note{color:#a98f9d}.dfe-setup-checksum{background:rgba(255,255,255,.04);border-color:rgba(255,157,192,.14);color:#caaabb}.dfe-setup-checksum code{color:#f0d4e1}.dfe-setup-checksum small{color:#a98f9d}.dfe-desktop-download{color:#ffa9c8}}",
       "@media (max-width:560px){.dfe-setup-backdrop{padding:5vh 12px 18px}.dfe-setup-card{padding:24px 19px 20px;border-radius:22px}.dfe-setup-card h2{font-size:20px}.dfe-setup-actions{display:grid}.dfe-setup-primary,.dfe-setup-direct{width:100%}.dfe-setup-later{width:100%;min-height:34px}}",
@@ -1471,6 +1520,14 @@ window.__ModuleLoader__.load({
           return function () { style.remove(); };
         });
       }
+      ctx.slots.inject("plugins.detail.section", function () {
+        return ctx.slots.register({
+          name: "plugins.detail.section",
+          id: "dsh-fishpet-emotion:desktop-download",
+          order: 90,
+          label: "完整桌面皮套",
+        }, PluginDownloadSection);
+      });
       ctx.slots.inject("shell.overlay", function () {
         return ctx.slots.register({
           name: "shell.overlay",
