@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-fishpet-emotion",
-  "version": "0.9.13",
+  "version": "0.9.14",
   "private": true,
   "type": "module",
   "description": "Unified DSH FishPet plugin: native emotion engine and dashboard plus the loopback bridge used by the standalone desktop companion.",

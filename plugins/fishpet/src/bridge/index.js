@@ -72,7 +72,7 @@ export const inject = [
   'sessions',
 ];
 
-const VERSION = '0.9.13';
+const VERSION = '0.9.14';
 const DEFAULT_AGENT_PRESET = 'fishpet-xiaoman-v6';
 const DEFAULT_PORT = 48720;
 const HEARTBEAT_MS = 15_000;

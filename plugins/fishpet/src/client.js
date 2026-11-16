@@ -10,7 +10,7 @@ window.__ModuleLoader__.load({
     var POLL_MS = 5000;
     var DESKTOP_ZIP_URL = "https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip";
     var DESKTOP_ZIP_MIRROR_URL = "https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip";
-    var DESKTOP_ZIP_SHA256 = "D4CAA179065B612F26005D95335CAAA73FAD92C63FCC5C7DB36DE19B86269DBA";
+    var DESKTOP_ZIP_SHA256 = "21534B87FD388C33F9A9AA9139ACB00FA56980837432B6DCC3A774F225CBDEF4";
     var SETUP_DISMISSED_KEY = "dsh-fishpet-emotion:desktop-guide:v1";
     var listeners = new Set();
     var openState = false;

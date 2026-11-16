@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const source = await readFile(new URL("../src/client.js", import.meta.url), "utf8");
-const checksum = "D4CAA179065B612F26005D95335CAAA73FAD92C63FCC5C7DB36DE19B86269DBA";
+const checksum = "21534B87FD388C33F9A9AA9139ACB00FA56980837432B6DCC3A774F225CBDEF4";
 
 test("desktop setup offers a domestic mirror before the GitHub fallback", () => {
   const mirror = source.indexOf("https://gh-proxy.com/https://github.com/ygc06/fishpet-release/");
