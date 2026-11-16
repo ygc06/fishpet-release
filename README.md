@@ -4,6 +4,8 @@
 
 **她不是一直等指令的桌宠。你损她一句，她会记着；你哄她，也不会立刻把刚才的气全忘掉。**
 
+> **2026-11-16 补丁：**工作看板的一轮回复恢复为一个气泡；陪伴聊天仍按换行拆成多条。
+
 平时，她会自己看回来、歪头、走神，偶尔露出一点小脾气。真聊起来时，她的表情、语气和下一句话会连在一起，不会每轮都像刚认识你。
 
 > **从 DSH 右上角“添加插件”安装？** 先粘贴[插件包直链](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)；人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。
