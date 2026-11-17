@@ -34,7 +34,7 @@ import { createStore } from './store/index.js';
 export const name = 'dsh-fishpet-emotion';
 
 /** 插件版本，随 package.json 的 UI/Host 版本一起发布。 */
-export const VERSION = '0.9.14';
+export const VERSION = '0.9.15';
 
 /**
  * 看板路由走 DSH 自己的认证边界，因此硬依赖 `connection`。

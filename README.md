@@ -4,13 +4,13 @@
 
 **她不是一直等指令的桌宠。你损她一句，她会记着；你哄她，也不会立刻把刚才的气全忘掉。**
 
-> **2026-11-16 补丁：**工作看板的一轮回复恢复为一个气泡；陪伴聊天仍按换行拆成多条。
+> **2026-11-17 更新：**Windows 版改成一个安装包，双击后点一次“安装”，自动创建桌面快捷方式；以后可在桌宠设置里一键更新。
 
 平时，她会自己看回来、歪头、走神，偶尔露出一点小脾气。真聊起来时，她的表情、语气和下一句话会连在一起，不会每轮都像刚认识你。
 
-> **从 DSH 右上角“添加插件”安装？** 先粘贴[插件包直链](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)；人物模型、动作、语音和桌面启动程序在约 253 MB 的完整 Windows 包里：[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](https://github.com/ygc06/fishpet-release/releases/latest)。
+> **想直接当桌面吉祥物？** 不安装 DSH 也可以。下载 [Windows 一键安装包](https://github.com/ygc06/fishpet-release/releases/download/v2026.11.17/FishPet-Setup-2026.11.17.exe)，双击并点一次“安装”就能用。国内网络可走[加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.17/FishPet-Setup-2026.11.17.exe)。
 
-> 安装后打开插件的介绍页，底部也会显示“下载 FishPet 完整版”卡片；点击国内加速按钮即可直接下载 ZIP。
+> **从 DSH 右上角“添加插件”安装？** 粘贴[插件包直链](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)，再安装上面的桌面安装包。桌宠发现本机 DSH 后会自动准备连接。
 
 > **素材来源说明：**“大肥鱼”Live2D 模型、贴图和原角色形象不是本项目作者原创，权利归原视频作者及角色权利人所有。详见 [素材来源与授权说明](素材来源与授权说明.md)。
 
@@ -51,29 +51,21 @@
 
 首次打开默认就是体型一，大小会按当前显示器校准。
 
-## 三步开箱
+## 开箱
 
-1. 在 DSH 右上角“添加插件 → 安装第三方插件”安装约 294 KB 的 [fishpet-emotion.tgz](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)。
-2. **下载并完整解压** `FishPet-2026.11.15-windows-x64.zip`，再双击桌宠目录里的 `启动大肥鱼.bat`。
-3. 只有 DSH 插件页没有 `@local/dsh-fishpet-emotion` 时，才需要完全退出 DSH、运行包内 `INSTALL-PLUGIN.bat` 并重启。
+1. 下载 [FishPet 一键安装包](https://github.com/ygc06/fishpet-release/releases/download/v2026.11.17/FishPet-Setup-2026.11.17.exe)。
+2. 双击，点一次“安装”。桌面会出现“大肥鱼”，不用解压，也不用找启动脚本。
+3. 想和她聊天，再在 DSH 里安装 [情绪与陪伴插件](https://github.com/ygc06/fishpet-release/releases/latest/download/fishpet-emotion.tgz)。桌宠会自动发现 DSH 并配置连接。
 
-第一次聊天时，请把聊天框模型选择器里的思考强度调到 `low`。情绪判读的小模型也保持低思考强度；默认已经配好，不要手动调高。
+[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.17/FishPet-Setup-2026.11.17.exe) · [GitHub 原站](../../releases/latest) · [SHA-256 校验文件](../../releases/download/v2026.11.17/FishPet-Setup-2026.11.17.exe.sha256)
 
-[国内加速下载](https://gh-proxy.com/https://github.com/ygc06/fishpet-release/releases/download/v2026.11.15/FishPet-2026.11.15-windows-x64.zip) · [GitHub 原站](../../releases/latest)
+以后有新版本时，打开桌宠设置 →“连接与更新”→“一键更新”。安装包会先校验，再自动替换并重启；聊天、情绪记忆和语音配置不会放进程序目录，所以升级不会清空。
 
-加速线路是第三方 GitHub 转发，速度会随网络变化。两个入口下载的是同一个约 253 MB 的 ZIP；下载后可核对 SHA-256：
-
-```text
-21534B87FD388C33F9A9AA9139ACB00FA56980837432B6DCC3A774F225CBDEF4
-```
-
-已安装旧版插件的用户，请先在 DSH 插件页卸载旧版，再安装新版插件包。
-
-需要 **Windows 10/11 x64**。包内已经带好桌宠运行时，不需要另外安装 Python、Node.js 或 FFmpeg。更细的安装说明和常见问题在下载包内。
+需要 **Windows 10/11 x64**。安装包已经带好运行时，不需要另外安装 Python、Node.js 或 FFmpeg。第一次聊天时，请把 DSH 陪伴聊天的思考强度调到 `low`，情绪判读的小模型也保持低档位。
 
 ## 素材来源与使用边界
 
-这是给 DSH Desktop 使用的桌宠扩展，不是独立聊天软件；需要本机已经能正常使用 DSH。
+DSH 是可选功能。没有 DSH，桌宠仍会自主待机、看鼠标、换动作和表情，是一个完整的桌面吉祥物；安装 DSH 后才会增加聊天、看板和长期记忆。
 
 “大肥鱼”Live2D 模型、贴图、原角色形象和原始模型动作来自 B 站原视频，并非本项目原创：
 
